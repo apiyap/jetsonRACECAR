@@ -26,7 +26,13 @@ SOFTWARE.
 #define _JHPWMPCA9685_H
 
 #include <cstddef>
-#include <linux/i2c-dev.h>
+// The smbus include is not C++ "ready" as most C headers for general use are, so it does not have an extern "C" declaration which means the C++ compiler mangles the names and the linking fails.
+// I beat my head against this for a few hours before I had an accidental insight. I fixed it by wrapping the includes in an extern "C" block and now my program links again.
+//https://stackoverflow.com/questions/50154296/undefined-reference-to-i2c-smbus-read-word-dataint-unsigned-char
+extern "C" {
+    #include <linux/i2c-dev.h>
+    #include <i2c/smbus.h>
+}
 #include <sys/ioctl.h>
 #include <cstdlib>
 #include <cstdio>
