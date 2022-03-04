@@ -22,7 +22,7 @@ PCA9685 *pca9685 ;
 // The Steering Servo is plugged into the follow PWM channel
 #define STEERING_CHANNEL 0
 // The ESC is plugged into the following PWM channel
-#define ESC_CHANNEL 1
+#define ESC_CHANNEL 15
 
 float currentPWM = PWM_NEUTRAL ;
 int currentChannel = ESC_CHANNEL ;

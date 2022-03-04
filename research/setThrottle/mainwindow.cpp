@@ -16,7 +16,7 @@ PCA9685 *pca9685 ;
 #define THROTTLE_FULL_FORWARD 409 // 2ms/20ms * 4096
 
 // The ESC is plugged into the following PWM channel
-#define ESC_CHANNEL 1
+#define ESC_CHANNEL 15
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
